@@ -10,16 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var memeImage: UIImageView!
+    
+    @IBAction func pickAnImage(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        present(pickerController, animated: true, completion: nil)
+    } // end pickAnImage
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-}
+    } // end viewDidLoad
+    
+} // end ViewController
 
