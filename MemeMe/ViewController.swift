@@ -122,6 +122,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
     } // end viewDidLoad
     
+  
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
         
@@ -161,7 +163,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Image picker controller functions
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("imagePickerController method called.")
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             memeImage.image = image
@@ -171,7 +172,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     } // end imagePickerController
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("imagePickerControllerDidCancel method called.")
         dismiss(animated: true, completion: nil)
     } // end imagePickerControllerDidCancel
     
