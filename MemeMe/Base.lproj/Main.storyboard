@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,64 +23,86 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-Ax-dql">
-                                <rect key="frame" x="0.0" y="126" width="375" height="389"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJP-oe-6GJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM TEXT" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbT-Mr-pEX" userLabel="Bottom text field">
+                                <rect key="frame" x="128" y="565" width="119" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEk-GD-MnX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="epX-ae-KAN">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="action" id="7N6-xc-Gtp">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="8NJ-XO-X5l"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="uOH-ah-zmk"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP TEXT" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eq2-CX-e7r" userLabel="Top text field">
+                                <rect key="frame" x="143.5" y="54" width="88" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zaz-N0-cqQ">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick image" width="226.5" id="2tb-r9-AaW">
+                                    <barButtonItem title="Album" width="219" id="xYU-NV-igu">
                                         <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="y96-4w-RtS"/>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="uVT-zx-ru2"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="camera" id="IqR-c2-F7t">
+                                    <barButtonItem style="plain" systemItem="camera" id="bSn-UT-Ef8">
                                         <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="ZVO-TQ-5mJ"/>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="BbO-W4-WQG"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eq2-CX-e7r" userLabel="Top text field">
-                                <rect key="frame" x="16" y="152" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbT-Mr-pEX" userLabel="Bottom text field">
-                                <rect key="frame" x="16" y="461" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mbT-Mr-pEX" firstAttribute="bottom" secondItem="2fb-Ax-dql" secondAttribute="bottom" id="363-P2-uWE"/>
-                            <constraint firstItem="Eq2-CX-e7r" firstAttribute="top" secondItem="2fb-Ax-dql" secondAttribute="top" constant="26" id="9EF-kb-5lC"/>
+                            <constraint firstItem="mbT-Mr-pEX" firstAttribute="bottom" secondItem="2fb-Ax-dql" secondAttribute="bottom" constant="-28" id="363-P2-uWE"/>
+                            <constraint firstItem="Eq2-CX-e7r" firstAttribute="top" secondItem="2fb-Ax-dql" secondAttribute="top" constant="10" id="9EF-kb-5lC"/>
                             <constraint firstItem="2fb-Ax-dql" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="9zM-Gj-XcK"/>
                             <constraint firstItem="Eq2-CX-e7r" firstAttribute="centerX" secondItem="2fb-Ax-dql" secondAttribute="centerX" id="BcQ-P4-cXz"/>
-                            <constraint firstItem="MJP-oe-6GJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="603" id="VR1-vM-gaY"/>
-                            <constraint firstItem="2fb-Ax-dql" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="Wy8-mJ-Nhq"/>
+                            <constraint firstItem="yEk-GD-MnX" firstAttribute="leading" secondItem="2fb-Ax-dql" secondAttribute="leading" id="Iqz-n4-PfH"/>
+                            <constraint firstItem="yEk-GD-MnX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="NqM-Og-wdY"/>
+                            <constraint firstItem="Zaz-N0-cqQ" firstAttribute="leading" secondItem="2fb-Ax-dql" secondAttribute="leading" id="Ujk-fY-woJ"/>
+                            <constraint firstItem="2fb-Ax-dql" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="Wy8-mJ-Nhq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2fb-Ax-dql" secondAttribute="trailing" constant="-16" id="ZuM-Xx-ybf"/>
-                            <constraint firstItem="MJP-oe-6GJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ecp-4u-Kb3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MJP-oe-6GJ" secondAttribute="trailing" constant="-16" id="fOu-Y6-qrq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2fb-Ax-dql" secondAttribute="bottom" constant="152" id="qFp-ge-Vsy"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MJP-oe-6GJ" secondAttribute="bottom" id="xwR-2T-XYs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2fb-Ax-dql" secondAttribute="bottom" constant="44" id="qFp-ge-Vsy"/>
+                            <constraint firstItem="Zaz-N0-cqQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ttx-4E-ZJ6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zaz-N0-cqQ" secondAttribute="bottom" id="uag-oc-Z8B"/>
+                            <constraint firstItem="yEk-GD-MnX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vLE-Ae-c9j"/>
                             <constraint firstItem="mbT-Mr-pEX" firstAttribute="centerX" secondItem="2fb-Ax-dql" secondAttribute="centerX" id="y91-c4-JFn"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomText" destination="mbT-Mr-pEX" id="hLk-qM-VkE"/>
-                        <outlet property="cameraButton" destination="IqR-c2-F7t" id="wyb-wz-v7b"/>
+                        <outlet property="cameraButton" destination="bSn-UT-Ef8" id="Ptg-Wt-mEA"/>
+                        <outlet property="cancelButton" destination="uOH-ah-zmk" id="TkL-Dp-RhJ"/>
                         <outlet property="memeImage" destination="2fb-Ax-dql" id="aN7-CT-FzR"/>
+                        <outlet property="navbar" destination="yEk-GD-MnX" id="8fl-jo-mML"/>
+                        <outlet property="shareButton" destination="7N6-xc-Gtp" id="ptP-Mt-oGS"/>
+                        <outlet property="toolbar" destination="Zaz-N0-cqQ" id="NW9-WP-bOS"/>
                         <outlet property="topText" destination="Eq2-CX-e7r" id="1YO-zT-6RU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="115.59220389805098"/>
+            <point key="canvasLocation" x="71.200000000000003" y="94.902548725637189"/>
         </scene>
     </scenes>
 </document>
