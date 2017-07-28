@@ -22,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-Ax-dql">
+                                <rect key="frame" x="0.0" y="126" width="375" height="389"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJP-oe-6GJ">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -37,13 +40,27 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-Ax-dql">
-                                <rect key="frame" x="0.0" y="126" width="375" height="389"/>
-                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eq2-CX-e7r" userLabel="Top text field">
+                                <rect key="frame" x="16" y="152" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbT-Mr-pEX" userLabel="Bottom text field">
+                                <rect key="frame" x="16" y="461" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mbT-Mr-pEX" firstAttribute="bottom" secondItem="2fb-Ax-dql" secondAttribute="bottom" id="363-P2-uWE"/>
+                            <constraint firstItem="Eq2-CX-e7r" firstAttribute="top" secondItem="2fb-Ax-dql" secondAttribute="top" constant="26" id="9EF-kb-5lC"/>
                             <constraint firstItem="2fb-Ax-dql" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="9zM-Gj-XcK"/>
+                            <constraint firstItem="Eq2-CX-e7r" firstAttribute="centerX" secondItem="2fb-Ax-dql" secondAttribute="centerX" id="BcQ-P4-cXz"/>
                             <constraint firstItem="MJP-oe-6GJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="603" id="VR1-vM-gaY"/>
                             <constraint firstItem="2fb-Ax-dql" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="Wy8-mJ-Nhq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2fb-Ax-dql" secondAttribute="trailing" constant="-16" id="ZuM-Xx-ybf"/>
@@ -51,11 +68,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="MJP-oe-6GJ" secondAttribute="trailing" constant="-16" id="fOu-Y6-qrq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2fb-Ax-dql" secondAttribute="bottom" constant="152" id="qFp-ge-Vsy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MJP-oe-6GJ" secondAttribute="bottom" id="xwR-2T-XYs"/>
+                            <constraint firstItem="mbT-Mr-pEX" firstAttribute="centerX" secondItem="2fb-Ax-dql" secondAttribute="centerX" id="y91-c4-JFn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomText" destination="mbT-Mr-pEX" id="hLk-qM-VkE"/>
                         <outlet property="cameraButton" destination="IqR-c2-F7t" id="wyb-wz-v7b"/>
                         <outlet property="memeImage" destination="2fb-Ax-dql" id="aN7-CT-FzR"/>
+                        <outlet property="topText" destination="Eq2-CX-e7r" id="1YO-zT-6RU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
