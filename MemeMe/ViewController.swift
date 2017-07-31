@@ -22,17 +22,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: IBActions
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        presentImagePickerWith(sourceType: .photoLibrary)
     } // end pickAnImage
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
+        presentImagePickerWith(sourceType: .camera)
+    } // end pickAnImage
+    
+    func presentImagePickerWith(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
-    } // end pickAnImage
+    } // end presentImagePickerWith
     
     
     @IBAction func shareMeme(_ sender: Any) {
@@ -70,8 +72,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // Generate a meme based on the selected image and typed text
     func generateMemedImage() -> UIImage {
         // Hide toolbar and navbar
-        toolbar.isHidden = true
-        navbar.isHidden = true
+        configureToolbars(hidden: true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -80,11 +81,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         // Show toolbar and navbar
-        toolbar.isHidden = false
-        navbar.isHidden = false
+        configureToolbars(hidden: false)
         
         return memedImage
     } // end generateMemedImage
+    
+    func configureToolbars(hidden: Bool){
+        if hidden {
+            toolbar.isHidden = true
+            navbar.isHidden = true
+        } else {
+            toolbar.isHidden = false
+            navbar.isHidden = false
+        }
+    } // end configureToolbars
     
     //MARK: meme text attributes
     let memeTextAttributes:[String:Any] = [
@@ -103,14 +113,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             shareButton.isEnabled = false
         }
         
-        topText.delegate = self
-        bottomText.delegate = self
-        
-        topText.defaultTextAttributes = self.memeTextAttributes
-        bottomText.defaultTextAttributes = self.memeTextAttributes
+        configure(textField: topText, text: "TOP TEXT", defaultAttributes: memeTextAttributes)
+        configure(textField: bottomText, text: "BOTTOM TEXT", defaultAttributes: memeTextAttributes)
         
         subscribeToKeyboardNotifications()
     } // end viewWillAppear
+    
+    //Configure the text fields for use
+    func configure(textField: UITextField, text: String, defaultAttributes: [String:Any]) {
+        textField.delegate = self
+        textField.text = text
+        textField.defaultTextAttributes = self.memeTextAttributes
+        textField.textAlignment = .center
+        } // end configure
     
     override func viewWillDisappear(_ animated: Bool) {
         
@@ -121,8 +136,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
     } // end viewDidLoad
-    
-  
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
@@ -136,7 +149,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: View adjustment for keyboard
     func keyboardWillShow(_ notification:Notification) {
+        if bottomText.isFirstResponder {
         view.frame.origin.y = 0 - getKeyboardHeight(notification)
+        }
     } // end keyboardWillShow
     
     func keyboardWillHide(_ notification: Notification) {
