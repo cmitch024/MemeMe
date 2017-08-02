@@ -53,20 +53,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     } // end shareMeme
     
     //MARK: generate a meme object
-    // Group all meme data items into struct
-    struct MemeModel {
-        let topString: String
-        let bottomString: String
-        let origionalImage: UIImage
-        let memedImage: UIImage
-    } // end MemeModel
-    
     // Store meme object
-    var memeObject: MemeModel?
+    var memeObject: Meme?
     
-    // Save a meme to the memObject property
+    // Save a meme to the memeObject property
     func save(memedImage: UIImage) {
-        memeObject = MemeModel(topString: topText.text!, bottomString: bottomText.text!, origionalImage: memeImage.image!, memedImage: memedImage)
+        memeObject = Meme(topString: topText.text!, bottomString: bottomText.text!, origionalImage: memeImage.image!, memedImage: memedImage)
+        
+        // Add it to the memes array in the App Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append((memeObject)!)
     } // end save
     
     // Generate a meme based on the selected image and typed text
