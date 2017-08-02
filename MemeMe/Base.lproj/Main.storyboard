@@ -32,7 +32,7 @@
         <scene sceneID="xCI-O2-Wx6">
             <objects>
                 <navigationController id="usb-BD-GAU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Eu1-ay-9wg"/>
+                    <tabBarItem key="tabBarItem" title="Item" badgeValue="Collection" id="Eu1-ay-9wg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cSC-EE-XEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,7 +48,7 @@
         <!--SentMemesCollectionViewController-->
         <scene sceneID="rxc-Wm-hON">
             <objects>
-                <collectionViewController title="SentMemesCollectionViewController" id="CKP-Nd-w5l" sceneMemberID="viewController">
+                <collectionViewController title="SentMemesCollectionViewController" id="CKP-Nd-w5l" customClass="SentMemesCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eLT-Q6-trk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
         <scene sceneID="ncO-Oq-8IW">
             <objects>
                 <navigationController id="yLG-Ak-GOq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="o2e-xJ-gsb"/>
+                    <tabBarItem key="tabBarItem" title="Item" badgeValue="Table" id="o2e-xJ-gsb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Y5-J1-Pc2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -100,7 +100,7 @@
         <!--SentMemesTableViewController-->
         <scene sceneID="HSk-r1-PcY">
             <objects>
-                <tableViewController title="SentMemesTableViewController" id="hCI-Ka-CbT" sceneMemberID="viewController">
+                <tableViewController title="SentMemesTableViewController" id="hCI-Ka-CbT" customClass="SentMemesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tAC-te-xL1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="-358" y="547"/>
         </scene>
-        <!--View Controller-->
+        <!--CreateMemeViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CreateMemeViewController" id="BYZ-38-t0r" customClass="CreateMemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
