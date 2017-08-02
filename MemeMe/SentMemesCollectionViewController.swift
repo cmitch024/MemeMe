@@ -15,12 +15,25 @@ class SentMemesCollectionViewController: UICollectionViewController  {
     var memes: [Meme]!
     
     //*************************************************************
+    // MARK: Outlets
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    //*************************************************************
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Code for shared data model
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+        
+        // Code for collection view flow layout
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
     //**************************************************************
