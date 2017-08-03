@@ -28,7 +28,7 @@ class SentMemesTableViewController: UITableViewController {
     // MARK: UITableViewDelegate & UITableViewDataSource
     // Set number of rows in table
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memes.count
+        return self.memes.count
     }
     
     // Populate the table
@@ -57,10 +57,11 @@ class SentMemesTableViewController: UITableViewController {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
         
         // Populate VC with an image
-        detailController.memeDetailImage.image = memes[(indexPath as NSIndexPath).row].memedImage
+        detailController.memeDetailImage.image = self.memes[(indexPath as NSIndexPath).row].memedImage
         
         // Present the VC using navigation
-        navigationController!.pushViewController(detailController, animated: true)
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
     }
     
     

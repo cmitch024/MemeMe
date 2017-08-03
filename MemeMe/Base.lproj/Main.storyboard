@@ -49,7 +49,7 @@
         <!--MemeMeDetailViewController-->
         <scene sceneID="9sn-aK-b2h">
             <objects>
-                <viewController title="MemeMeDetailViewController" id="Z0x-F8-SbA" customClass="MemeMeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeMeDetailViewController" title="MemeMeDetailViewController" id="Z0x-F8-SbA" customClass="MemeMeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4a8-bS-wzh"/>
                         <viewControllerLayoutGuide type="bottom" id="5tL-yV-8ck"/>
@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGq-PL-q4N">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,7 +82,7 @@
         <scene sceneID="rxc-Wm-hON">
             <objects>
                 <collectionViewController title="SentMemesCollectionViewController" id="CKP-Nd-w5l" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="eLT-Q6-trk">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eLT-Q6-trk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,7 +112,6 @@
                                     <constraint firstItem="7mS-8W-ATO" firstAttribute="top" secondItem="mkH-V9-1Iv" secondAttribute="topMargin" constant="-8" id="udv-fp-IeP"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="image" destination="7mS-8W-ATO" id="EjF-W8-Go9"/>
                                     <outlet property="memeImage" destination="7mS-8W-ATO" id="b5M-ct-yqh"/>
                                 </connections>
                             </collectionViewCell>
@@ -132,6 +131,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="flowLayout" destination="443-be-hGB" id="vSx-lM-FHN"/>
+                        <segue destination="Z0x-F8-SbA" kind="show" id="Ar2-py-BtC"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3J-iL-uOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,7 +165,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeMeTableViewCell" textLabel="DIC-cG-HHU" style="IBUITableViewCellStyleDefault" id="5Ev-tt-uvf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeMeTableViewCell" textLabel="DIC-cG-HHU" detailTextLabel="1m5-hy-9MQ" style="IBUITableViewCellStyleValue1" id="5Ev-tt-uvf">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ev-tt-uvf" id="UPS-9k-0qj">
@@ -173,7 +173,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DIC-cG-HHU">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1m5-hy-9MQ">
+                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -196,6 +203,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="Z0x-F8-SbA" kind="show" id="dds-aY-Iwd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMs-gH-cjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,6 +317,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dds-aY-Iwd"/>
         <segue reference="aw3-9c-575"/>
     </inferredMetricsTieBreakers>
 </document>

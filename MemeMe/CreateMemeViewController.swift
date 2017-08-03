@@ -69,7 +69,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         // Add meme to the memes array in the App Delegate
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
-        appDelegate.memes.append((memeObject)!)
+        appDelegate.memes.append(memeObject!)
     } // end save
     
     // Generate a meme based on the selected image and typed text

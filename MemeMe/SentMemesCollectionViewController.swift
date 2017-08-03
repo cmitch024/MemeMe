@@ -40,14 +40,16 @@ class SentMemesCollectionViewController: UICollectionViewController  {
     // MARK: UICollectionViewDelegate & UICollectionViewDataSource
     // Set number of items in collection
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return memes.count
+        return self.memes.count
     }
     
     // Build a custom cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeMeCollectionViewCell", for: indexPath) as! MemeMeCollectionViewCell
+        // Pull the image
+        let meme = self.memes[(indexPath as NSIndexPath).row]
         // Set the image
-        cell.memeImage.image = UIImage(named: memes[(indexPath as NSIndexPath).row].memedImage.description)
+        cell.memeImage.image = meme.memedImage
         
         return cell
     }
