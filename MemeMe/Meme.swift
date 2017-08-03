@@ -1,5 +1,5 @@
 //
-//  Meme.swift...
+//  Meme.swift
 //  MemeMe
 //
 //  Created by cmitch024 on 8/1/17.
