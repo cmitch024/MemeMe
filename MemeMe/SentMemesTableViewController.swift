@@ -1,5 +1,5 @@
 //
-//  SentMemesTableViewController.swift
+//  SentMemesTableViewController.swift..
 //  MemeMe
 //
 //  Created by cmitch024 on 8/2/17.
@@ -42,7 +42,7 @@ class SentMemesTableViewController: UITableViewController {
         cell.imageView?.image = meme.memedImage
 //            UIImage(named: meme.memedImage.description)
         
-        // This is dead code from the villian app.  
+        // This is dead code from the villian app. ... 
 //        // If the cell has a detail label, we will put the evil scheme in.
 //        if let detailTextLabel = cell.detailTextLabel {
 //            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
