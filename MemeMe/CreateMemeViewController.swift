@@ -9,7 +9,7 @@
 import UIKit
 
 class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
-    
+    //*************************************************************************
     //MARK: IBOutlets
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -20,6 +20,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
+    //*************************************************************************
     //MARK: IBActions
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         presentImagePickerWith(sourceType: .photoLibrary)
@@ -52,6 +53,11 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         }
     } // end shareMeme
     
+    @IBAction func cancel(_ sender: Any) {
+        //navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+    //*************************************************************************
     //MARK: generate a meme object
     // Store meme object
     var memeObject: Meme?
@@ -60,7 +66,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     func save(memedImage: UIImage) {
         memeObject = Meme(topString: topText.text!, bottomString: bottomText.text!, origionalImage: memeImage.image!, memedImage: memedImage)
         
-        // Add it to the memes array in the App Delegate
+        // Add meme to the memes array in the App Delegate
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append((memeObject)!)
@@ -83,6 +89,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         return memedImage
     } // end generateMemedImage
     
+    // Hide the toolbars before genrating a meme, show them after generating
     func configureToolbars(hidden: Bool){
         if hidden {
             toolbar.isHidden = true
@@ -93,6 +100,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         }
     } // end configureToolbars
     
+    //*************************************************************************
     //MARK: meme text attributes
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -101,15 +109,20 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         NSStrokeWidthAttributeName: -1.0,
         NSBackgroundColorAttributeName: UIColor.clear]
     
+    //*************************************************************************
     //MARK: Lifecycle events
     override func viewWillAppear(_ animated: Bool) {
+        // Display the camera button based on the presence of a camera
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        
+        // Display the share button based on the presence of a memeImage
         if memeImage.image != nil {
         shareButton.isEnabled = true
         } else {
             shareButton.isEnabled = false
         }
         
+        // Setup text fields
         configure(textField: topText, text: "TOP TEXT", defaultAttributes: memeTextAttributes)
         configure(textField: bottomText, text: "BOTTOM TEXT", defaultAttributes: memeTextAttributes)
         
@@ -136,7 +149,6 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
-        
     } // end textFieldDidBeginEditing
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -144,13 +156,18 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         return true
     } // end textFielddShouldReturn
     
+    //*****************************************************************
     //MARK: View adjustment for keyboard
+    
+    // Slide view up in order to display the keyboard and bottom text field
+    // at the same time
     func keyboardWillShow(_ notification:Notification) {
         if bottomText.isFirstResponder {
         view.frame.origin.y = 0 - getKeyboardHeight(notification)
         }
     } // end keyboardWillShow
     
+    // Slide view back down after done with keyboard and bottom text field
     func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
     } // end keyboardWillHide
@@ -173,6 +190,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     } // end unsubscribeFromKeyboardNotifications
     
+    //*****************************************************************
     //MARK: Image picker controller functions
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         

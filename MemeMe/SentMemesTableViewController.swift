@@ -26,6 +26,16 @@ class SentMemesTableViewController: UITableViewController {
     
     //**************************************************************
     // MARK: UITableViewDelegate 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Grab the DetailVC from Storyboard
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
+        
+        // Populate VC with an image
+        detailController.memeDetailImage.image = memes[(indexPath as NSIndexPath).row].memedImage
+        
+        // Present the VC using navigation
+        navigationController!.pushViewController(detailController, animated: true)
+    }
     
     
 } // end SentMemesTableViewController

@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Model
     var memes = [Meme]()
-
+//    // Test data
+//    var meme1 = Meme(topString: "Yo", bottomString: "What up?", origionalImage: #imageLiteral(resourceName: "LaunchImage"), memedImage: #imageLiteral(resourceName: "LaunchImage") )
+//    var meme2 = Meme(topString: "Hey", bottomString: "Sup", origionalImage: #imageLiteral(resourceName: "LaunchImage"), memedImage: #imageLiteral(resourceName: "LaunchImage") )
+//    var meme3 = Meme(topString: "In there", bottomString: "like swimwear", origionalImage: #imageLiteral(resourceName: "LaunchImage"), memedImage: #imageLiteral(resourceName: "LaunchImage") )
+//    memes.append(meme1)
+//    memes.append(meme2)
+//    memes.append(meme3)
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
