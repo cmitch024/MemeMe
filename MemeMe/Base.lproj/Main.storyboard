@@ -28,11 +28,11 @@
             </objects>
             <point key="canvasLocation" x="-2223" y="79"/>
         </scene>
-        <!--Item-->
+        <!--Collection-->
         <scene sceneID="xCI-O2-Wx6">
             <objects>
                 <navigationController id="usb-BD-GAU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" badgeValue="Collection" id="Eu1-ay-9wg"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="collection_30x30" selectedImage="collection_30x30" id="Eu1-ay-9wg"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cSC-EE-XEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -113,6 +113,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="image" destination="7mS-8W-ATO" id="EjF-W8-Go9"/>
+                                    <outlet property="memeImage" destination="7mS-8W-ATO" id="b5M-ct-yqh"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -137,11 +138,11 @@
             </objects>
             <point key="canvasLocation" x="-376.80000000000001" y="-177.66116941529236"/>
         </scene>
-        <!--Item-->
+        <!--Table-->
         <scene sceneID="ncO-Oq-8IW">
             <objects>
                 <navigationController id="yLG-Ak-GOq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" badgeValue="Table" id="o2e-xJ-gsb"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="table_30x30" selectedImage="table_30x30" id="o2e-xJ-gsb"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Y5-J1-Pc2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -164,12 +165,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeMeTableViewCell" id="5Ev-tt-uvf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeMeTableViewCell" textLabel="DIC-cG-HHU" style="IBUITableViewCellStyleDefault" id="5Ev-tt-uvf">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ev-tt-uvf" id="UPS-9k-0qj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DIC-cG-HHU">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -181,7 +191,6 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="O7r-As-jL6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mhG-mL-RBI">
                             <connections>
-                                <action selector="addMeme:" destination="hCI-Ka-CbT" id="mFH-Px-fZE"/>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="aw3-9c-575"/>
                             </connections>
                         </barButtonItem>
@@ -293,6 +302,10 @@
             <point key="canvasLocation" x="610" y="697"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection_30x30" width="30" height="30"/>
+        <image name="table_30x30" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aw3-9c-575"/>
     </inferredMetricsTieBreakers>

@@ -25,7 +25,33 @@ class SentMemesTableViewController: UITableViewController {
     }
     
     //**************************************************************
-    // MARK: UITableViewDelegate 
+    // MARK: UITableViewDelegate & UITableViewDataSource
+    // Set number of rows in table
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return memes.count
+    }
+    
+    // Populate the table
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeMeTableViewCell")!
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        
+        // Set the labels and image
+        cell.textLabel?.text = meme.topString
+        cell.detailTextLabel?.text = meme.bottomString
+        cell.imageView?.image = meme.memedImage
+//            UIImage(named: meme.memedImage.description)
+        
+        // This is dead code from the villian app.  
+//        // If the cell has a detail label, we will put the evil scheme in.
+//        if let detailTextLabel = cell.detailTextLabel {
+//            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
+//        }
+        
+        return cell
+    }
+    
+    // React to user selection of row
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Grab the DetailVC from Storyboard
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController

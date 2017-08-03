@@ -43,7 +43,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         
         let view = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
         present(view, animated: true, completion: nil)
-        
+       
         view.completionWithItemsHandler = {
             activity,completed,items,error in
             if completed {
