@@ -11,28 +11,19 @@ import UIKit
 
 class MemeMeDetailViewController: UIViewController {
     
+    // MARK: Properties
+    
+    var meme: Meme?
+    
     // MARK: Outlet
     
     @IBOutlet weak var memeDetailImage: UIImageView!
     
-    //************************************************************
-    //MARK: Properties
-    
-    // Local verson of the data model
-   // var memes: [Meme]!
-    
     //*************************************************************
     // MARK: Lifecycle
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Code for shared data model
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        memes = appDelegate.memes
-//    }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.memeDetailImage!.image = UIImage(named: )
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        memeDetailImage.image = meme?.memedImage
+    }
 } // end MemeMeDetailViewController
