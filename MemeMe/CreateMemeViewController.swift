@@ -59,17 +59,15 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     }
     //*************************************************************************
     //MARK: generate a meme object
-    // Store meme object
-    var memeObject: Meme?
-    
+ 
     // Save a meme to the memeObject property
     func save(memedImage: UIImage) {
-        memeObject = Meme(topString: topText.text!, bottomString: bottomText.text!, origionalImage: memeImage.image!, memedImage: memedImage)
+        let memeObject = Meme(topString: topText.text!, bottomString: bottomText.text!, origionalImage: memeImage.image!, memedImage: memedImage)
         
         // Add meme to the memes array in the App Delegate
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(memeObject!)
+        appDelegate.memes.append(memeObject)
     } // end save
     
     // Generate a meme based on the selected image and typed text

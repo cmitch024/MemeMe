@@ -13,12 +13,19 @@ class SentMemesTableViewController: UITableViewController {
     
     //MARK: Properties
     // Local verson of the data model
-    var memes: [Meme]!
+    var memes = [Meme]()
     
     //*************************************************************
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Moved to viewWillAppear
+//        // Code for shared data model
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        memes = appDelegate.memes
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         // Code for shared data model
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes

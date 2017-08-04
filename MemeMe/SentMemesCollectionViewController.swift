@@ -23,9 +23,10 @@ class SentMemesCollectionViewController: UICollectionViewController  {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Code for shared data model
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
+        // Moved to viewWillAppear
+//        // Code for shared data model
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        memes = appDelegate.memes
         
         // Code for collection view flow layout
         let space: CGFloat = 3.0
@@ -34,6 +35,12 @@ class SentMemesCollectionViewController: UICollectionViewController  {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Code for shared data model
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
     }
     
     //**************************************************************
