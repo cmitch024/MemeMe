@@ -60,16 +60,24 @@ class SentMemesTableViewController: UITableViewController {
     
     // React to user selection of row
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Dead code
         // Grab the DetailVC from Storyboard
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
+//        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
+//        
+//        // Populate VC with an image
+//        detailController.memeDetailImage.image = self.memes[(indexPath as NSIndexPath).row].memedImage
+//        
+//        // Present the VC using navigation
+//        self.navigationController!.pushViewController(detailController, animated: true)
         
-        // Populate VC with an image
-        detailController.memeDetailImage.image = self.memes[(indexPath as NSIndexPath).row].memedImage
+        // Get the storyboard and DetailVC
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "MemeMeDetailViewController")as! MemeMeDetailViewController
         
-        // Present the VC using navigation
-        self.navigationController!.pushViewController(detailController, animated: true)
-        
-    }
-    
+        // Assign memed image to imageView in detailVC
+        detailVC.memeDetailImage.image = self.memes[(indexPath as NSIndexPath).row].memedImage
+        self.present(detailVC, animated: true, completion: nil)
+
+    } // end didSelectRowAt
     
 } // end SentMemesTableViewController

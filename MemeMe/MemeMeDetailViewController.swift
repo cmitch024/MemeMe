@@ -32,8 +32,7 @@ class MemeMeDetailViewController: UIViewController {
 //    }
     
 //    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated
-//        )
-//        self.memeDetailImage!.image = UIImage(named: memes[)
+//        super.viewWillAppear(animated)
+//        self.memeDetailImage!.image = UIImage(named: )
 //    }
 } // end MemeMeDetailViewController
