@@ -29,6 +29,7 @@ class SentMemesTableViewController: UITableViewController {
         // Code for shared data model
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+        self.tableView.reloadData()
     }
     
     //**************************************************************
