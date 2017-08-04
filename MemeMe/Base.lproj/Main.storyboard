@@ -198,7 +198,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="O7r-As-jL6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mhG-mL-RBI">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="Detail" id="aw3-9c-575"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="" id="aw3-9c-575"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -317,7 +317,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ar2-py-BtC"/>
         <segue reference="aw3-9c-575"/>
+        <segue reference="Ar2-py-BtC"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,6 +41,7 @@ class SentMemesCollectionViewController: UICollectionViewController  {
         // Code for shared data model
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+        self.collectionView?.reloadData()
     }
     
     //**************************************************************
@@ -66,8 +67,11 @@ class SentMemesCollectionViewController: UICollectionViewController  {
         // Grab the DetailVC from Storyboard
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
         
+//        // Populate VC with an image
+//        detailController.memeDetailImage.image = self.memes[(indexPath as NSIndexPath).row].memedImage
+        
         // Populate VC with an image
-        detailController.memeDetailImage.image = memes[(indexPath as NSIndexPath).row].memedImage
+        detailController.meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Present the VC using navigation
         navigationController!.pushViewController(detailController, animated: true)
