@@ -22,6 +22,10 @@ class MemeMeDetailViewController: UIViewController {
     //*************************************************************
     // MARK: Lifecycle
     
+    override func viewDidLoad() {
+//        self.navigationItem.backBarButtonItem?.title = "Sent Memes"
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         memeDetailImage.image = meme?.memedImage

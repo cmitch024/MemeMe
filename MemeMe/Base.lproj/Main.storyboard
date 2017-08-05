@@ -28,11 +28,11 @@
             </objects>
             <point key="canvasLocation" x="-2223" y="79"/>
         </scene>
-        <!--Collection-->
+        <!--Grid-->
         <scene sceneID="xCI-O2-Wx6">
             <objects>
                 <navigationController id="usb-BD-GAU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" image="collection_30x30" selectedImage="collection_30x30" id="Eu1-ay-9wg"/>
+                    <tabBarItem key="tabBarItem" title="Grid" image="collection_30x30" selectedImage="collection_30x30" id="Eu1-ay-9wg"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cSC-EE-XEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="-1297" y="-184"/>
         </scene>
-        <!--MemeMeDetailViewController-->
+        <!--Meme Me Detail View Controller-->
         <scene sceneID="9sn-aK-b2h">
             <objects>
-                <viewController storyboardIdentifier="MemeMeDetailViewController" title="MemeMeDetailViewController" id="Z0x-F8-SbA" customClass="MemeMeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeMeDetailViewController" id="Z0x-F8-SbA" customClass="MemeMeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4a8-bS-wzh"/>
                         <viewControllerLayoutGuide type="bottom" id="5tL-yV-8ck"/>
@@ -100,7 +100,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mS-8W-ATO">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mS-8W-ATO">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         </imageView>
                                     </subviews>
@@ -165,7 +165,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeMeTableViewCell" textLabel="DIC-cG-HHU" detailTextLabel="1m5-hy-9MQ" style="IBUITableViewCellStyleValue1" id="5Ev-tt-uvf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeMeTableViewCell" textLabel="DIC-cG-HHU" detailTextLabel="1m5-hy-9MQ" style="IBUITableViewCellStyleValue1" id="5Ev-tt-uvf">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ev-tt-uvf" id="UPS-9k-0qj">
@@ -318,6 +318,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aw3-9c-575"/>
-        <segue reference="Ar2-py-BtC"/>
+        <segue reference="dds-aY-Iwd"/>
     </inferredMetricsTieBreakers>
 </document>

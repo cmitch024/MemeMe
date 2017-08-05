@@ -35,6 +35,8 @@ class SentMemesCollectionViewController: UICollectionViewController  {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Sent Memes", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +66,10 @@ class SentMemesCollectionViewController: UICollectionViewController  {
     
     // Respond to user selection
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let backItem = UIBarButtonItem()
+//        backItem.title = "Sent Memes"
+//        navigationItem.backBarButtonItem = backItem
+        
         // Grab the DetailVC from Storyboard
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
         
